@@ -5,7 +5,7 @@ exports.up = function(knex) {
     table.string("body").notNullable();
     table.string("location").notNullable();
     table.boolean("completed");
-    table.timestamp(true, true);
+    table.timestamps(true, true);
     table
       .integer("user_id")
       .references("id")
