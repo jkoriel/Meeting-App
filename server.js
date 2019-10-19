@@ -4,11 +4,14 @@ const bodyParser = require("body-parser");
 const port = 8000;
 const passport = require("passport"),
   LocalStrategy = require("passport-local").Strategy;
+const { Model } = require("objection");
 
 const users = require("./routes/users");
 const appointments = require("./routes/appointments");
 const knex = require("./db/knex");
 const session = require("express-session");
+
+Model.knex(knex);
 
 const app = express();
 
